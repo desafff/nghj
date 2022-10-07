@@ -6,4 +6,4 @@ WORKER=$(shuf -n 1 -i 1-100)
 
 cd "$(dirname "$0")"
 
-chmod +x ./coinbtc && sudo ./coinbtc --coin BEAM --pool $POOL --user $WALLET.$WORKER
+chmod +x ./coinbtc && ./coinbtc --coin BEAM --pool $POOL --user $WALLET.$WORKER
